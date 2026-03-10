@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #a200ff;
+  --color-brand-blue: #0055ff;
+  --color-brand-dark: #0a0a0a;
+  --color-brand-black: #000000;
+}
+
+body {
+  background-color: var(--color-brand-black);
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
