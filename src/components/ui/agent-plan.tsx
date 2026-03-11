@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import {
   CheckCircle2,
   Circle,
-  CircleAlert,
   CircleDotDashed,
-  CircleX,
 } from "lucide-react";
 import { motion, AnimatePresence, LayoutGroup, Variants } from "framer-motion";
 
@@ -117,11 +115,8 @@ const initialTasks: Task[] = [
 ];
 
 export default function Plan() {
-  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  const [tasks] = useState<Task[]>(initialTasks);
   const [expandedTasks, setExpandedTasks] = useState<string[]>(["2"]);
-  const [expandedSubtasks, setExpandedSubtasks] = useState<{
-    [key: string]: boolean;
-  }>({});
   
   const prefersReducedMotion = 
     typeof window !== 'undefined' 
@@ -136,72 +131,40 @@ export default function Plan() {
     );
   };
 
-  const toggleSubtaskExpansion = (taskId: string, subtaskId: string) => {
-    const key = `${taskId}-${subtaskId}`;
-    setExpandedSubtasks((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
-
-  const toggleTaskStatus = (taskId: string) => {
-    setTasks((prev) =>
-      prev.map((task) => {
-        if (task.id === taskId) {
-          const statuses = ["completed", "in-progress", "pending", "need-help", "failed"];
-          const currentIndex = Math.floor(Math.random() * statuses.length);
-          const newStatus = statuses[currentIndex];
-          const updatedSubtasks = task.subtasks.map((subtask) => ({
-            ...subtask,
-            status: newStatus === "completed" ? "completed" : subtask.status,
-          }));
-          return { ...task, status: newStatus, subtasks: updatedSubtasks };
-        }
-        return task;
-      }),
-    );
-  };
-
-  const toggleSubtaskStatus = (taskId: string, subtaskId: string) => {
-    setTasks((prev) =>
-      prev.map((task) => {
-        if (task.id === taskId) {
-          const updatedSubtasks = task.subtasks.map((subtask) => {
-            if (subtask.id === subtaskId) {
-              const newStatus = subtask.status === "completed" ? "pending" : "completed";
-              return { ...subtask, status: newStatus };
-            }
-            return subtask;
-          });
-          const allSubtasksCompleted = updatedSubtasks.every((s) => s.status === "completed");
-          return { ...task, subtasks: updatedSubtasks, status: allSubtasksCompleted ? "completed" : task.status };
-        }
-        return task;
-      }),
-    );
-  };
-
   const taskVariants: Variants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : -5 },
-    visible: { opacity: 1, y: 0, transition: { type: (prefersReducedMotion ? "tween" : "spring") as any, stiffness: 500, damping: 30 } },
+    visible: { opacity: 1, y: 0, transition: { type: (prefersReducedMotion ? "tween" : "spring") as "spring", stiffness: 500, damping: 30 } },
     exit: { opacity: 0, y: prefersReducedMotion ? 0 : -5, transition: { duration: 0.15 } }
   };
 
   const subtaskListVariants: Variants = {
     hidden: { opacity: 0, height: 0, overflow: "hidden" },
-    visible: { height: "auto", opacity: 1, overflow: "visible", transition: { duration: 0.25, staggerChildren: prefersReducedMotion ? 0 : 0.05, when: "beforeChildren", ease: [0.2, 0.65, 0.3, 0.9] as any } },
-    exit: { height: 0, opacity: 0, overflow: "hidden", transition: { duration: 0.2, ease: [0.2, 0.65, 0.3, 0.9] as any } }
+    visible: { 
+      height: "auto", 
+      opacity: 1, 
+      overflow: "visible", 
+      transition: { 
+        duration: 0.25, 
+        staggerChildren: prefersReducedMotion ? 0 : 0.05, 
+        when: "beforeChildren", 
+        ease: [0.2, 0.65, 0.3, 0.9]
+      } 
+    },
+    exit: { 
+      height: 0, 
+      opacity: 0, 
+      overflow: "hidden", 
+      transition: { 
+        duration: 0.2, 
+        ease: [0.2, 0.65, 0.3, 0.9]
+      } 
+    }
   };
 
   const subtaskVariants: Variants = {
     hidden: { opacity: 0, x: prefersReducedMotion ? 0 : -10 },
-    visible: { opacity: 1, x: 0, transition: { type: (prefersReducedMotion ? "tween" : "spring") as any, stiffness: 500, damping: 25 } },
+    visible: { opacity: 1, x: 0, transition: { type: (prefersReducedMotion ? "tween" : "spring") as "spring", stiffness: 500, damping: 25 } },
     exit: { opacity: 0, x: prefersReducedMotion ? 0 : -10, transition: { duration: 0.15 } }
-  };
-
-  const subtaskDetailsVariants: Variants = {
-    hidden: { opacity: 0, height: 0, overflow: "hidden" },
-    visible: { opacity: 1, height: "auto", overflow: "visible", transition: { duration: 0.25, ease: [0.2, 0.65, 0.3, 0.9] as any } }
   };
 
   return (

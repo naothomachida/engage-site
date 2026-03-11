@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Bot, PhoneCall, TrendingUp, ShieldAlert, Zap, Clock, UserX, BarChart3, LayoutDashboard, UserPlus, Lightbulb, Calendar, Settings, RotateCw, CalendarCheck, Lock, Target, ChevronUp, Layers, Rocket, ShieldCheck, Sparkles, BrainCircuit } from 'lucide-react';
+import { ArrowRight, TrendingUp, Zap, Clock, BarChart3, LayoutDashboard, UserPlus, Lightbulb, Calendar, Target, ChevronUp, Layers, Rocket, ShieldCheck, Sparkles, BrainCircuit } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Demo } from './components/ui/demo';
 import { MarqueeDemo } from './components/ui/marquee-demo';
@@ -20,7 +20,7 @@ function App() {
       setWordIndex((prev) => (prev + 1) % words.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [words.length]);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Bot, Sparkles, BrainCircuit } from "lucide-react";
+import { Bot, Sparkles, BrainCircuit } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Message {

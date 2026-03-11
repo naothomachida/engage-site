@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Check, ArrowRight, Send, MessageSquare } from 'lucide-react';
-import { SpecialText } from './special-text';
+import { X, Check, ArrowRight, MessageSquare } from 'lucide-react';
 
 interface BookingModalProps {
   isOpen: boolean;
