@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, TrendingUp, Zap, Clock, BarChart3, LayoutDashboard, UserPlus, Lightbulb, Calendar, Target, ChevronUp, Layers, Rocket, ShieldCheck, Sparkles, BrainCircuit } from 'lucide-react';
+import { ArrowRight, TrendingUp, Zap, Clock, BarChart3, LayoutDashboard, UserPlus, Lightbulb, Calendar, Target, ChevronUp, Layers, Rocket, ShieldCheck, Sparkles, BrainCircuit, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Demo } from './components/ui/demo';
 import { MarqueeDemo } from './components/ui/marquee-demo';
@@ -11,6 +11,7 @@ import { BookingModal } from './components/ui/booking-modal';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
   const words = ["agenda reuniões", "qualifica leads", "vende 24/7", "não sente sono", "escala seu lucro"];
@@ -35,7 +36,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-gray-200 selection:bg-brand-purple selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-black text-gray-200 selection:bg-brand-purple selection:text-white font-sans antialiased overflow-x-hidden">
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Back to Top */}
@@ -58,6 +59,14 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img src="/logo.png" alt="Engage Max" className="h-16 md:h-20 w-auto object-contain -ml-2" />
+            
+            {/* Botão Mobile - Ao lado do logo */}
+            <button 
+              className="lg:hidden text-white p-2 hover:bg-white/5 rounded-full transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
           
           <div className="hidden lg:flex items-center gap-10 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
@@ -72,6 +81,51 @@ function App() {
              </button>
           </div>
         </div>
+
+        {/* Menu Mobile Overlay */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-black border-t border-white/5 px-6 py-8 overflow-hidden"
+            >
+              <div className="flex flex-col gap-8 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
+                <a 
+                  href="#solucoes" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                >
+                  <Layers size={14} className="group-hover:text-brand-purple" /> Soluções
+                </a>
+                <a 
+                  href="#performance" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                >
+                  <Rocket size={14} className="group-hover:text-brand-purple" /> Performance
+                </a>
+                <a 
+                  href="#diferenciais" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                >
+                  <ShieldCheck size={14} className="group-hover:text-brand-purple" /> Diferenciais
+                </a>
+                <button 
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsModalOpen(true);
+                  }}
+                  className="bg-brand-purple text-white px-6 py-4 hover:bg-brand-purple/80 transition-all text-center tracking-[0.2em]"
+                >
+                  Agendar Demo Técnica
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero Section (Fused with Animated List) */}
@@ -82,7 +136,7 @@ function App() {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-8"
+              className="text-3xl md:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-[1.1] mb-8"
             >
               Escale suas vendas <br/>
               deixando o trabalho <br/>
