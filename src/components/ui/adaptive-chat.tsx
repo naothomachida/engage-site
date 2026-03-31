@@ -45,11 +45,11 @@ export function AdaptiveChat() {
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
           <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-            <BrainCircuit size={14} className="text-brand-purple" /> 
+            <BrainCircuit size={14} className="text-brand-blue" /> 
             IA Adaptativa em tempo real
           </span>
         </div>
-        <Sparkles size={14} className="text-brand-purple" />
+        <Sparkles size={14} className="text-brand-blue" />
       </div>
 
       <div className="p-6 h-[400px] overflow-y-auto space-y-6 flex flex-col">
@@ -67,7 +67,7 @@ export function AdaptiveChat() {
               <div className={cn(
                 "p-4 rounded-2xl text-sm leading-relaxed",
                 msg.role === "bot" 
-                  ? "bg-brand-purple/10 border border-brand-purple/20 text-gray-200 rounded-tl-none" 
+                  ? "bg-brand-blue/10 border border-brand-blue/20 text-gray-200 rounded-tl-none" 
                   : "bg-zinc-900 border border-white/5 text-gray-400 rounded-tr-none"
               )}>
                 {msg.content}
@@ -77,7 +77,7 @@ export function AdaptiveChat() {
                 <motion.span 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="mt-2 text-[9px] font-bold text-brand-purple uppercase tracking-tighter flex items-center gap-1"
+                  className="mt-2 text-[9px] font-bold text-brand-blue uppercase tracking-tighter flex items-center gap-1"
                 >
                   <Bot size={10} /> Estratégia: {msg.strategy}
                 </motion.span>
@@ -90,7 +90,7 @@ export function AdaptiveChat() {
       <div className="p-4 bg-white/[0.02] border-t border-white/5">
         <div className="h-2 w-1/2 bg-white/5 rounded-full overflow-hidden">
           <motion.div 
-            className="h-full bg-brand-purple"
+            className="h-full bg-brand-blue"
             animate={{ width: ["0%", "100%"] }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
           />

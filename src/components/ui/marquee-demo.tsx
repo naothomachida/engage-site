@@ -12,7 +12,7 @@ export function MarqueeDemo() {
       <Marquee pauseOnHover duration={30} fadeAmount={20}>
         {integrations.map((item, i) => (
           <div key={i} className="mx-8 flex items-center gap-2">
-            <div className="w-1 h-1 rounded-full bg-brand-purple"></div>
+            <div className="w-1 h-1 rounded-full bg-brand-blue"></div>
             <span className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] whitespace-nowrap">
               {item}
             </span>

@@ -83,7 +83,7 @@ const Notification = ({ avatar, title, subtitle, time }: { avatar: string, title
             <h5 className='text-sm font-bold text-white truncate'>{title}</h5>
             <span className='text-[10px] text-gray-600 font-mono'>{time}</span>
           </div>
-          <p className='text-xs font-medium text-brand-purple truncate'>{subtitle}</p>
+          <p className='text-xs font-medium text-brand-blue truncate'>{subtitle}</p>
         </div>
       </div>
     </div>

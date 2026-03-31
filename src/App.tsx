@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-gray-200 selection:bg-brand-purple selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-black text-gray-200 selection:bg-brand-blue selection:text-white font-sans antialiased overflow-x-hidden">
       <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Back to Top */}
@@ -47,7 +47,7 @@ function App() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={scrollToTop}
-            className="fixed bottom-10 right-10 z-[90] bg-brand-purple text-white p-4 rounded-full shadow-2xl hover:bg-white hover:text-black transition-all border border-white/10"
+            className="fixed bottom-10 right-10 z-[90] bg-brand-blue text-white p-4 rounded-full shadow-2xl hover:bg-white hover:text-black transition-all border border-white/10"
           >
             <ChevronUp size={24} />
           </motion.button>
@@ -70,12 +70,12 @@ function App() {
           </div>
           
           <div className="hidden lg:flex items-center gap-10 text-[10px] font-bold text-gray-500 uppercase tracking-[0.2em]">
-             <a href="#solucoes" className="hover:text-brand-purple transition-colors flex items-center gap-2 group"><Layers size={12} className="group-hover:text-brand-purple" /> Soluções</a>
-             <a href="#performance" className="hover:text-brand-purple transition-colors flex items-center gap-2 group"><Rocket size={12} className="group-hover:text-brand-purple" /> Performance</a>
-             <a href="#diferenciais" className="hover:text-brand-purple transition-colors flex items-center gap-2 group"><ShieldCheck size={12} className="group-hover:text-brand-purple" /> Diferenciais</a>
+             <a href="#solucoes" className="hover:text-brand-blue transition-colors flex items-center gap-2 group"><Layers size={12} className="group-hover:text-brand-blue" /> Soluções</a>
+             <a href="#performance" className="hover:text-brand-blue transition-colors flex items-center gap-2 group"><Rocket size={12} className="group-hover:text-brand-blue" /> Performance</a>
+             <a href="#diferenciais" className="hover:text-brand-blue transition-colors flex items-center gap-2 group"><ShieldCheck size={12} className="group-hover:text-brand-blue" /> Diferenciais</a>
              <button 
                onClick={() => setIsModalOpen(true)}
-               className="bg-brand-purple/10 text-brand-purple border border-brand-purple/20 px-6 py-3 hover:bg-brand-purple hover:text-white transition-all"
+               className="bg-brand-blue/10 text-brand-blue border border-brand-blue/20 px-6 py-3 hover:bg-brand-blue hover:text-white transition-all"
              >
                Agendar Demo Técnica
              </button>
@@ -95,30 +95,30 @@ function App() {
                 <a 
                   href="#solucoes" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                  className="hover:text-brand-blue transition-colors flex items-center gap-2 group"
                 >
-                  <Layers size={14} className="group-hover:text-brand-purple" /> Soluções
+                  <Layers size={14} className="group-hover:text-brand-blue" /> Soluções
                 </a>
                 <a 
                   href="#performance" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                  className="hover:text-brand-blue transition-colors flex items-center gap-2 group"
                 >
-                  <Rocket size={14} className="group-hover:text-brand-purple" /> Performance
+                  <Rocket size={14} className="group-hover:text-brand-blue" /> Performance
                 </a>
                 <a 
                   href="#diferenciais" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-brand-purple transition-colors flex items-center gap-2 group"
+                  className="hover:text-brand-blue transition-colors flex items-center gap-2 group"
                 >
-                  <ShieldCheck size={14} className="group-hover:text-brand-purple" /> Diferenciais
+                  <ShieldCheck size={14} className="group-hover:text-brand-blue" /> Diferenciais
                 </a>
                 <button 
                   onClick={() => {
                     setIsMenuOpen(false);
                     setIsModalOpen(true);
                   }}
-                  className="bg-brand-purple text-white px-6 py-4 hover:bg-brand-purple/80 transition-all text-center tracking-[0.2em]"
+                  className="bg-brand-blue text-white px-6 py-4 hover:bg-brand-blue/80 transition-all text-center tracking-[0.2em]"
                 >
                   Agendar Demo Técnica
                 </button>
@@ -141,7 +141,7 @@ function App() {
               Escale suas vendas <br/>
               deixando o trabalho <br/>
               repetitivo com a <span className="text-white">SDR IA</span> <br/>
-              que <SpecialText key={wordIndex} className="text-brand-purple">{words[wordIndex]}</SpecialText>
+              que <SpecialText key={wordIndex} className="text-brand-blue">{words[wordIndex]}</SpecialText>
             </motion.h1>
             
             <motion.div 
@@ -166,7 +166,7 @@ function App() {
             >
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-brand-purple text-white font-bold px-10 py-5 rounded-sm hover:bg-brand-purple/80 transition-all flex items-center justify-center gap-3 uppercase text-sm tracking-widest"
+                className="bg-brand-blue text-white font-bold px-10 py-5 rounded-sm hover:bg-brand-blue/80 transition-all flex items-center justify-center gap-3 uppercase text-sm tracking-widest"
               >
                 Solicitar Demonstração
                 <ArrowRight size={18} />
@@ -185,15 +185,15 @@ function App() {
                   <Clock size={20} className="text-red-500 shrink-0" />
                   <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-relaxed">Leads esfriam <br/><span className="text-white">em 5 minutos</span></p>
                </div>
-               <div className="p-4 bg-brand-purple/5 border border-brand-purple/20 flex gap-4 items-center">
-                  <Zap size={20} className="text-brand-purple shrink-0" />
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-relaxed">Engage Max <br/><span className="text-brand-purple">Atende em 2s</span></p>
+               <div className="p-4 bg-brand-blue/5 border border-brand-blue/20 flex gap-4 items-center">
+                  <Zap size={20} className="text-brand-blue shrink-0" />
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest leading-relaxed">Engage Max <br/><span className="text-brand-blue">Atende em 2s</span></p>
                </div>
             </div>
           </div>
 
           <div className="relative lg:block hidden justify-self-end w-full max-w-md">
-             <div className="absolute inset-0 bg-brand-purple/10 blur-[100px] rounded-full pointer-events-none"></div>
+             <div className="absolute inset-0 bg-brand-blue/10 blur-[100px] rounded-full pointer-events-none"></div>
              <div className="relative z-10">
                 <AnimatedListDemo />
              </div>
@@ -213,27 +213,27 @@ function App() {
       <section className="py-24 bg-zinc-950 border-b border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
           <div className="order-2 lg:order-1 relative">
-             <div className="absolute -inset-20 bg-brand-purple/5 blur-[100px] rounded-full pointer-events-none"></div>
+             <div className="absolute -inset-20 bg-brand-blue/5 blur-[100px] rounded-full pointer-events-none"></div>
              <AdaptiveChat />
           </div>
           <div className="order-1 lg:order-2 max-w-2xl">
-             <span className="text-xs font-bold tracking-[0.4em] text-brand-purple uppercase mb-6 block text-center lg:text-left">Inteligência Comportamental</span>
+             <span className="text-xs font-bold tracking-[0.4em] text-brand-blue uppercase mb-6 block text-center lg:text-left">Inteligência Comportamental</span>
              <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight tracking-tight text-center lg:text-left">
                Abordagem sob medida <br/>
-               <span className="text-brand-purple italic">para cada perfil de lead.</span>
+               <span className="text-brand-blue italic">para cada perfil de lead.</span>
              </h2>
              <p className="text-lg text-gray-500 mb-10 leading-relaxed text-center lg:text-left">
                A Engage Max não segue roteiros engessados. Nossa IA analisa o perfil psicológico e a urgência do lead em tempo real, adaptando o vocabulário, o tom de voz e a estratégia de persuasão para garantir conversas naturais e humanas que convertem.
              </p>
              <div className="grid sm:grid-cols-2 gap-8">
                 <div className="text-center lg:text-left">
-                   <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center justify-center lg:justify-start gap-2 text-brand-purple">
+                   <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center justify-center lg:justify-start gap-2 text-brand-blue">
                       <Sparkles size={16} /> Naturalidade
                    </h4>
                    <p className="text-xs text-gray-600 leading-relaxed font-medium">Sem vícios de linguagem ou sotaques robóticos. A IA fala a língua do seu cliente.</p>
                 </div>
                 <div className="text-center lg:text-left">
-                   <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center justify-center lg:justify-start gap-2 text-brand-purple">
+                   <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-3 flex items-center justify-center lg:justify-start gap-2 text-brand-blue">
                       <BrainCircuit size={16} /> Contexto
                    </h4>
                    <p className="text-xs text-gray-600 leading-relaxed font-medium">Identificação automática de objeções e contra-argumentação baseada em frameworks de elite.</p>
@@ -248,32 +248,32 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <BarChart3 className="text-brand-purple mb-6" size={32} />
+              <BarChart3 className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">KPIs Automáticos</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Monitoramento de CAC, LTV e ROI processados sem intervenção humana.</p>
             </div>
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <TrendingUp className="text-brand-purple mb-6" size={32} />
+              <TrendingUp className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Performance Analítica</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Otimização de conversão baseada em dados históricos.</p>
             </div>
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <LayoutDashboard className="text-brand-purple mb-6" size={32} />
+              <LayoutDashboard className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Pipeline Autônomo</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Gerenciamento automático de CRM através da análise semântica.</p>
             </div>
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <UserPlus className="text-brand-purple mb-6" size={32} />
+              <UserPlus className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Ingestão de Dados</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Captura e higienização instantânea de leads.</p>
             </div>
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <Lightbulb className="text-brand-purple mb-6" size={32} />
+              <Lightbulb className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Inteligência Tática</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Geração de resumos executivos e insights estratégicos.</p>
             </div>
             <div className="bg-black p-10 hover:bg-white/[0.02] transition-colors cursor-pointer" onClick={() => setIsModalOpen(true)}>
-              <Calendar className="text-brand-purple mb-6" size={32} />
+              <Calendar className="text-brand-blue mb-6" size={32} />
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-tight">Agendamento Otimizado</h3>
               <p className="text-gray-500 leading-relaxed text-sm">Links de agenda baseados em probabilidade de conversão.</p>
             </div>
@@ -286,24 +286,24 @@ function App() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">Gestão de Fluxo Comercial e <br/><SpecialText inView className="text-brand-purple">Orquestração de Closers</SpecialText></h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-tight">Gestão de Fluxo Comercial e <br/><SpecialText inView className="text-brand-blue">Orquestração de Closers</SpecialText></h2>
               <div className="space-y-8">
                 <div className="flex gap-6">
-                   <div className="w-px h-12 bg-brand-purple"></div>
+                   <div className="w-px h-12 bg-brand-blue"></div>
                    <div>
                       <h4 className="font-bold text-white uppercase text-xs tracking-widest mb-2">Roteiros Dinâmicos</h4>
                       <p className="text-gray-500 text-sm">Scripts adaptados via IA para frameworks de alta conversão.</p>
                    </div>
                 </div>
                 <div className="flex gap-6">
-                   <div className="w-px h-12 bg-brand-purple"></div>
+                   <div className="w-px h-12 bg-brand-blue"></div>
                    <div>
                       <h4 className="font-bold text-white uppercase text-xs tracking-widest mb-2">Roleta de Vendas</h4>
                       <p className="text-gray-500 text-sm">Distribuição inteligente baseada em performance e presença.</p>
                    </div>
                 </div>
                 <div className="flex gap-6">
-                   <div className="w-px h-12 bg-brand-purple"></div>
+                   <div className="w-px h-12 bg-brand-blue"></div>
                    <div>
                       <h4 className="font-bold text-white uppercase text-xs tracking-widest mb-2">Conflito Zero</h4>
                       <p className="text-gray-500 text-sm">Sincronização multicanal de agenda sem sobreposição.</p>
@@ -323,10 +323,10 @@ function App() {
         <ContainerScroll
           titleComponent={
             <div className="flex flex-col items-center">
-              <span className="text-xs font-bold tracking-[0.4em] text-brand-purple uppercase mb-4 block">Interface de Comando</span>
+              <span className="text-xs font-bold tracking-[0.4em] text-brand-blue uppercase mb-4 block">Interface de Comando</span>
               <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-8 text-center px-4">
                 Sua operação comercial em <br/>
-                <SpecialText inView className="text-brand-purple italic">um único cockpit estratégico</SpecialText>.
+                <SpecialText inView className="text-brand-blue italic">um único cockpit estratégico</SpecialText>.
               </h2>
             </div>
           }
@@ -344,12 +344,12 @@ function App() {
       <section className="py-24 bg-black border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
           <div className="relative">
-             <Target className="text-brand-purple/20 absolute -top-12 -left-12" size={160} />
-             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight relative z-10">Onipresença <br/><span className="text-brand-purple">Inteligente</span></h2>
+             <Target className="text-brand-blue/20 absolute -top-12 -left-12" size={160} />
+             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight relative z-10">Onipresença <br/><span className="text-brand-blue">Inteligente</span></h2>
              <p className="text-lg text-gray-500 leading-relaxed mb-10">Recupere oportunidades perdidas com cadências de remarketing automáticas e personalizadas.</p>
              <button 
                onClick={() => setIsModalOpen(true)}
-               className="bg-brand-purple/10 text-brand-purple border border-brand-purple/20 px-8 py-4 uppercase font-bold tracking-widest text-xs hover:bg-brand-purple hover:text-white transition-all"
+               className="bg-brand-blue/10 text-brand-blue border border-brand-blue/20 px-8 py-4 uppercase font-bold tracking-widest text-xs hover:bg-brand-blue hover:text-white transition-all"
              >
                Ativar Remarketing Agora
              </button>
@@ -370,11 +370,11 @@ function App() {
       {/* Final CTA */}
       <section id="contato" className="py-32 bg-zinc-950 text-center">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">Prepare sua operação para a <br/><SpecialText inView className="text-brand-purple">escala do próximo nível</SpecialText>.</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">Prepare sua operação para a <br/><SpecialText inView className="text-brand-blue">escala do próximo nível</SpecialText>.</h2>
           <p className="text-gray-500 mb-12 text-lg">Pare de rasgar dinheiro com processos manuais lentos. Comece agora sua transformação.</p>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-white text-black font-bold px-16 py-6 rounded-sm hover:bg-brand-purple hover:text-white transition-all uppercase text-sm tracking-[0.2em] shadow-2xl"
+            className="bg-white text-black font-bold px-16 py-6 rounded-sm hover:bg-brand-blue hover:text-white transition-all uppercase text-sm tracking-[0.2em] shadow-2xl"
           >
             Agendar Demonstração Técnica
           </button>

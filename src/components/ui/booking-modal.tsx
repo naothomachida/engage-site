@@ -87,11 +87,11 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     {QUESTIONS.map((_, i) => (
                       <div 
                         key={i} 
-                        className={`h-1 flex-1 transition-colors duration-500 ${i <= step ? 'bg-brand-purple' : 'bg-white/10'}`} 
+                        className={`h-1 flex-1 transition-colors duration-500 ${i <= step ? 'bg-brand-blue' : 'bg-white/10'}`} 
                       />
                     ))}
                   </div>
-                  <span className="text-[10px] font-bold text-brand-purple uppercase tracking-[0.3em] mb-4 block">
+                  <span className="text-[10px] font-bold text-brand-blue uppercase tracking-[0.3em] mb-4 block">
                     Passo {step + 1} de {QUESTIONS.length}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
@@ -105,10 +105,10 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       key={i}
                       whileHover={{ x: 10 }}
                       onClick={() => handleOptionSelect(option)}
-                      className="w-full text-left p-5 border border-white/5 bg-white/[0.02] hover:bg-brand-purple/10 hover:border-brand-purple/50 transition-all flex items-center justify-between group"
+                      className="w-full text-left p-5 border border-white/5 bg-white/[0.02] hover:bg-brand-blue/10 hover:border-brand-blue/50 transition-all flex items-center justify-between group"
                     >
                       <span className="text-gray-300 font-medium group-hover:text-white transition-colors">{option}</span>
-                      <ArrowRight size={18} className="text-brand-purple opacity-0 group-hover:opacity-100 transition-all" />
+                      <ArrowRight size={18} className="text-brand-blue opacity-0 group-hover:opacity-100 transition-all" />
                     </motion.button>
                   ))}
                 </div>
@@ -119,8 +119,8 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 animate={{ opacity: 1 }}
                 className="text-center"
               >
-                <div className="w-20 h-20 bg-brand-purple/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <Check size={40} className="text-brand-purple" />
+                <div className="w-20 h-20 bg-brand-blue/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                  <Check size={40} className="text-brand-blue" />
                 </div>
                 <h3 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">
                   Perfil Qualificado
@@ -130,7 +130,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 </p>
                 <button
                   onClick={handleWhatsAppRedirect}
-                  className="w-full bg-brand-purple text-white font-bold py-6 px-10 rounded-sm hover:bg-brand-purple/80 transition-all flex items-center justify-center gap-4 uppercase tracking-widest text-sm"
+                  className="w-full bg-brand-blue text-white font-bold py-6 px-10 rounded-sm hover:bg-brand-blue/80 transition-all flex items-center justify-center gap-4 uppercase tracking-widest text-sm"
                 >
                   <MessageSquare size={20} />
                   Falar com Naotho no WhatsApp

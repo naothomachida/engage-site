@@ -197,7 +197,7 @@ export default function Plan() {
                         {task.status === "completed" ? (
                           <CheckCircle2 className="h-5 w-5 text-green-500" />
                         ) : task.status === "in-progress" ? (
-                          <CircleDotDashed className="h-5 w-5 text-brand-purple animate-spin-slow" />
+                          <CircleDotDashed className="h-5 w-5 text-brand-blue animate-spin-slow" />
                         ) : (
                           <Circle className="text-gray-600 h-5 w-5" />
                         )}
@@ -209,7 +209,7 @@ export default function Plan() {
                         </span>
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest ml-4 ${
                           task.status === "completed" ? "bg-green-500/10 text-green-500" : 
-                          task.status === "in-progress" ? "bg-brand-purple/10 text-brand-purple" : 
+                          task.status === "in-progress" ? "bg-brand-blue/10 text-brand-blue" : 
                           "bg-gray-800 text-gray-400"
                         }`}>
                           {task.status}
