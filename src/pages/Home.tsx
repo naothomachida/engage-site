@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useEffect } from 'react';
 import './Home.css';
 
 function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   useEffect(() => {
     // Lógica para o FAQ (acordeão)
     const details = document.querySelectorAll('details');
@@ -25,41 +22,23 @@ function Home() {
     };
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
-
   return (
-    <div className={`home-wrapper ${isMenuOpen ? 'menu-open' : ''}`}>
+    <div className="home-wrapper">
       <header>
         <div className="container head">
-          <a href="#top" aria-label="Engage Max" onClick={closeMenu}>
-            <img src="/logo.png" alt="Engage Max" style={{ height: '32px', width: 'auto' }} />
+          <a href="#top" aria-label="Engage Max">
+            <img src="/logo.png" alt="Engage Max" style={{ height: '56px', width: 'auto' }} />
           </a>
-          
           <nav aria-label="principal" className="desktop-nav">
             <a href="#plataforma">Plataforma</a>
+            <a href="#solucoes">Soluções</a>
             <a href="#agentes">Agentes</a>
             <a href="#resultados">Resultados</a>
             <a href="#faq">Dúvidas</a>
           </nav>
-
           <div className="head-actions">
-            <a href="#contato" className="btn btn-primary desktop-only">Falar com um especialista</a>
-            <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <a href="#contato" className="btn btn-primary">Falar com um especialista</a>
           </div>
-        </div>
-
-        {/* Mobile Menu Overlay */}
-        <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-          <nav>
-            <a href="#plataforma" onClick={closeMenu}>Plataforma</a>
-            <a href="#agentes" onClick={closeMenu}>Agentes</a>
-            <a href="#resultados" onClick={closeMenu}>Resultados</a>
-            <a href="#faq" onClick={closeMenu}>Dúvidas</a>
-            <a href="#contato" className="btn btn-primary" onClick={closeMenu}>Falar com um especialista</a>
-          </nav>
         </div>
       </header>
 
@@ -76,11 +55,6 @@ function Home() {
               <div className="hero-cta">
                 <a href="#contato" className="btn btn-primary">Quero entender a solução</a>
               </div>
-              <div className="hero-metrics">
-                <div className="metric"><strong>24/7</strong><span>operação contínua.</span></div>
-                <div className="metric"><strong>60x</strong><span>mais velocidade.</span></div>
-                <div className="metric"><strong>-72%</strong><span>de esforço manual.</span></div>
-              </div>
             </div>
             <div className="hero-panel">
               <div className="hero-inner">
@@ -91,13 +65,16 @@ function Home() {
                   <div className="sim">
                     <h4>Atendimento</h4>
                     <p>Identifica intenção e encaminha em segundos.</p>
-                    <div className="sim-line"><span></span></div>
                   </div>
                   <div className="sim">
                     <h4>Operação</h4>
                     <p>Agenda e pedidos na mesma estrutura.</p>
-                    <div className="sim-line"><span style={{ animationDelay: '.7s' }}></span></div>
                   </div>
+                </div>
+                <div className="hero-metrics-mini">
+                  <div className="metric-mini"><strong>24/7</strong><span>operação</span></div>
+                  <div className="metric-mini"><strong>60x</strong><span>velocidade</span></div>
+                  <div className="metric-mini"><strong>-72%</strong><span>esforço</span></div>
                 </div>
               </div>
             </div>
@@ -152,20 +129,67 @@ function Home() {
             <div className="panel">
               <div className="eyebrow">A plataforma</div>
               <h2 className="title">Eficiência e Escala</h2>
-              <p className="subtitle">Uma camada inteligente que atende, organiza e registra dados para a sua gestão.</p>
+              <p className="subtitle">Uma camada inteligente que atende, organiza e registra dados.</p>
               <div className="grid" style={{ marginTop: '22px', gap: '14px' }}>
                 <div className="card" style={{ padding: '18px' }}><h3>Reduz custos</h3><p>Menos perda de lead e retrabalho.</p></div>
-                <div className="card" style={{ padding: '18px' }}><h3>Capacidade 24/7</h3><p>Processa múltiplos fluxos sem parar.</p></div>
+                <div className="card" style={{ padding: '18px' }}><h3>Capacidade 24/7</h3><p>Processa múltiplos fluxos simultaneamente.</p></div>
               </div>
             </div>
             <div className="orbits" aria-hidden="true">
               <div className="ring r1"></div>
               <div className="ring r2"></div>
+              <div className="ring r3"></div>
               <div className="core"><img src="/symbol.png" alt="Ícone" style={{ width: '50px' }} /></div>
-              <div className="orb o1"><h4>Atendimento</h4></div>
-              <div className="orb o2"><h4>Processos</h4></div>
-              <div className="orb o3"><h4>Relatórios</h4></div>
-              <div className="orb o4"><h4>Retorno</h4></div>
+              <div className="orb o1"><h4>Atendimento</h4><p>Interpreta e conduz.</p></div>
+              <div className="orb o2"><h4>Processos</h4><p>Etapas com regra.</p></div>
+              <div className="orb o3"><h4>Relatórios</h4><p>Visão operacional.</p></div>
+              <div className="orb o4"><h4>Retorno</h4><p>Gera resultado.</p></div>
+            </div>
+          </div>
+        </section>
+
+        {/* SOLUCOES (RESTAURADA) */}
+        <section className="section" id="solucoes">
+          <div className="container">
+            <div className="eyebrow">Soluções da plataforma</div>
+            <h2 className="title">A Engage Max em situações reais</h2>
+            <p className="subtitle">Organização de jornadas e redução de atrito para clientes e gestão.</p>
+            <div className="solution-grid">
+              <article className="solution">
+                <div className="solution-top"><h3>Entrada inteligente</h3><div className="pill">Lead</div><div className="pill">Triagem</div></div>
+                <div className="solution-body">
+                  <div className="sim-ui">
+                    <div className="chat">
+                      <div className="bubble user">Oi, queria saber preço.</div>
+                      <div className="bubble bot">Posso te ajudar. Me diga sua necessidade e já te direciono.</div>
+                      <div className="bubble bot">Em 12s: triagem concluída e dados captados.</div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article className="solution">
+                <div className="solution-top"><h3>Processos internos</h3><div className="pill">Agenda</div><div className="pill">Pedidos</div></div>
+                <div className="solution-body">
+                  <div className="sim-ui">
+                    <div className="table-sim">
+                      <div className="trow"><strong>Etapa</strong><strong>Status</strong></div>
+                      <div className="trow"><span>Triagem</span><span>Automática</span></div>
+                      <div className="trow"><span>Dados</span><span>Concluída</span></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article className="solution">
+                <div className="solution-top"><h3>Visão gerencial</h3><div className="pill">KPIs</div><div className="pill">Gestão</div></div>
+                <div className="solution-body">
+                  <div className="sim-ui">
+                    <div className="table-sim">
+                      <div className="trow"><span>Contatos</span><strong>184</strong></div>
+                      <div className="trow"><span>Automação</span><strong>71%</strong></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -201,16 +225,62 @@ function Home() {
           </div>
         </section>
 
-        {/* INDICADORES */}
+        {/* IMPLANTACAO (RESTAURADA) */}
+        <section className="section">
+          <div className="container split">
+            <div>
+              <div className="eyebrow">Implantação consultiva</div>
+              <h2 className="title">Aderência técnica gera resultado</h2>
+              <p className="subtitle">Entendemos sua operação para estruturar o melhor fluxo.</p>
+              <div className="timeline">
+                <div className="step"><div className="num">01</div><h3>Diagnóstico</h3><p>Entendimento dos canais e gargalos.</p></div>
+                <div className="step"><div className="num">02</div><h3>Desenho Técnico</h3><p>Configuração dos agentes e automações.</p></div>
+                <div className="step"><div className="num">03</div><h3>Go-live</h3><p>Entrada assistida e ajuste fino.</p></div>
+              </div>
+            </div>
+            <div className="panel">
+              <div className="eyebrow">Por que importa</div>
+              <h2 className="title">Resultado Real</h2>
+              <div className="grid" style={{ marginTop: '20px', gap: '14px' }}>
+                <div className="card" style={{ padding: '18px' }}><h3>Menos custo</h3><p>Redução de horas em tarefas repetitivas.</p></div>
+                <div className="card" style={{ padding: '18px' }}><h3>Mais escala</h3><p>Crescimento sem caos operacional.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* INDICADORES & VIZ (RESTAURADA) */}
         <section className="section" id="resultados">
           <div className="container">
             <div className="eyebrow">Indicadores</div>
-            <h2 className="title">Números que mostram o investimento</h2>
+            <h2 className="title">O impacto do investimento</h2>
             <div className="kpis">
               <div className="kpi"><strong>60x</strong><span>mais velocidade.</span></div>
               <div className="kpi"><strong>-72%</strong><span>esforço operacional.</span></div>
               <div className="kpi"><strong>+31%</strong><span>aproveitamento.</span></div>
               <div className="kpi"><strong>24/7</strong><span>continuidade.</span></div>
+            </div>
+            <div className="dataviz">
+              <article className="viz">
+                <h3>Ganho operacional</h3>
+                <div className="funnel">
+                  <div className="row"><strong>Contato</strong><div className="bar"><span style={{ width: '100%' }}></span></div><strong>100%</strong></div>
+                  <div className="row"><strong>Triado</strong><div className="bar"><span style={{ width: '92%' }}></span></div><strong>92%</strong></div>
+                  <div className="row"><strong>Qualificado</strong><div className="bar"><span style={{ width: '79%' }}></span></div><strong>79%</strong></div>
+                </div>
+              </article>
+              <article className="viz">
+                <h3>Performance Live</h3>
+                <div className="mini-dash">
+                  <div className="dash-top"><div className="tabs"><span>Atendimento</span><span>Processos</span></div><strong style={{ color: 'var(--primary)' }}>Live</strong></div>
+                  <div className="curve">
+                    <svg viewBox="0 0 600 220" preserveAspectRatio="none">
+                      <path d="M0,210 C60,190 95,160 140,156 C190,151 215,128 260,118 C308,106 340,96 390,90 C450,82 510,52 600,20 L600,220 L0,220 Z" fill="rgba(21,214,255,.1)"></path>
+                      <path d="M0,210 C60,190 95,160 140,156 C190,151 215,128 260,118 C308,106 340,96 390,90 C450,82 510,52 600,20" fill="none" stroke="var(--primary)" strokeWidth="4"></path>
+                    </svg>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -220,7 +290,7 @@ function Home() {
           <div className="container faqwrap">
             <div className="grid" style={{ gap: '14px' }}>
               <details open><summary>O que é a Engage Max?<span>+</span></summary><p>Uma plataforma que automatiza processos, organiza fluxos e gera relatórios gerenciais.</p></details>
-              <details><summary>Por que investir?<span>+</span></summary><p>Reduz custos, ganha velocidade e evita perda de oportunidades.</p></details>
+              <details><summary>Por que investir?<span>+</span></summary><p>Reduz custos, ganha velocidade e evita perda de oportunidades comerciais.</p></details>
             </div>
             <aside className="faqside">
               <img src="/symbol.png" alt="Ícone" style={{ width: '50px', marginBottom: '12px' }} />
@@ -231,13 +301,47 @@ function Home() {
         </section>
 
         {/* CONTATO */}
-        <section className="section cta" id="contato">
+        <section className="section contact-section" id="contato">
           <div className="container">
-            <div className="cta-card">
-              <img src="/logo.png" alt="Engage Max" style={{ height: '40px', marginBottom: '20px' }} />
-              <h2 style={{ color: 'white' }}>Sua operação inteligente agora</h2>
-              <div className="cta-actions">
-                <a className="btn btn-primary" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">Falar com um consultor</a>
+            <div className="contact-card">
+              <div className="contact-content">
+                <div className="eyebrow" style={{ marginBottom: '20px' }}>Pronto para o próximo nível?</div>
+                <h2>A sua operação <span>escalável e inteligente</span> começa aqui</h2>
+                <p>Junte-se às empresas que já automatizaram seus processos e estão focando no que realmente importa: o crescimento.</p>
+                <div className="contact-benefits">
+                  <div className="benefit-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Implantação assistida</span>
+                  </div>
+                  <div className="benefit-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Suporte especializado</span>
+                  </div>
+                  <div className="benefit-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>ROI comprovado</span>
+                  </div>
+                </div>
+                <div className="contact-actions">
+                  <a className="btn btn-primary btn-lg" href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+                    Falar com um especialista agora
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div className="contact-visual">
+                <div className="visual-circle">
+                  <img src="/symbol.png" alt="Engage Max" />
+                </div>
               </div>
             </div>
           </div>
@@ -245,13 +349,60 @@ function Home() {
       </main>
 
       <footer className="footer-main">
-        <div className="container foot">
-          <div className="foot-left">
-            <img src="/logo.png" alt="Engage Max" style={{ height: '24px', width: 'auto' }} />
-            <p className="copy">© 2026 Engage Max.</p>
+        <div className="container footer-grid">
+          <div className="footer-col brand-col">
+            <img src="/logo.png" alt="Engage Max" className="footer-logo" />
+            <p>Transformamos operações através de inteligência artificial e automação de processos, gerando escala e eficiência real para o seu negócio.</p>
+            <div className="social-links">
+              <a href="#" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+            </div>
           </div>
-          <div className="foot-right">
-            <p className="copy">Atendimento · Processos · Relatórios</p>
+
+          <div className="footer-col">
+            <h4>Navegação</h4>
+            <nav>
+              <a href="#top">Início</a>
+              <a href="#plataforma">Plataforma</a>
+              <a href="#solucoes">Soluções</a>
+              <a href="#agentes">Agentes</a>
+              <a href="#resultados">Resultados</a>
+            </nav>
+          </div>
+
+          <div className="footer-col">
+            <h4>Soluções</h4>
+            <nav>
+              <a href="#">Entrada Inteligente</a>
+              <a href="#">Processos Internos</a>
+              <a href="#">Visão Gerencial</a>
+              <a href="#">Secretaria Digital</a>
+              <a href="#">Food & Pedidos</a>
+            </nav>
+          </div>
+
+          <div className="footer-col">
+            <h4>Contato</h4>
+            <div className="contact-info">
+              <p>📍 São Paulo, Brasil</p>
+              <p>📧 contato@engagemax.com.br</p>
+              <p>📞 (11) 99999-9999</p>
+              <a href="#contato" className="btn btn-secondary btn-sm" style={{ marginTop: '16px' }}>Falar com suporte</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="container footer-bottom">
+          <div className="bottom-inner">
+            <p className="copy">© 2026 Engage Max. Todos os direitos reservados.</p>
+            <div className="legal-links">
+              <a href="#">Termos de Uso</a>
+              <a href="#">Privacidade</a>
+            </div>
           </div>
         </div>
       </footer>
